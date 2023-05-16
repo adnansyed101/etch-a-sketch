@@ -12,6 +12,6 @@
     "vite": "^4.3.2"
   },
   "dependencies": {
-    "eslint": "^8.40.0"
+    "range-slider-input": "^2.4.4"
   }
 }

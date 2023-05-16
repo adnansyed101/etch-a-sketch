@@ -7,12 +7,12 @@
   font-family: "Roboto";
 }
 
-header {
-  margin: 20px 0;
+header h1 {
+  margin: 20px;
 }
 
 .container {
-  width: 1200px;
+  width: 1580px;
   margin: auto;
 }
 
@@ -38,7 +38,7 @@ header {
 
 .block {
   display: inline-block;
-  padding: 7px;
+  padding: 10px;
   border: 1px solid black;
   font-size: 0;
 }
@@ -54,4 +54,17 @@ header {
 .xy-center {
   align-items: center;
   justify-content: center;
+}
+
+#range-slider {
+  width: 600px;
+  margin: auto;
+}
+
+#range-slider .range-slider__thumb[data-lower] {
+  width: 0;
+}
+
+#range-slider .range-slider__range {
+  border-radius: 6px;
 }

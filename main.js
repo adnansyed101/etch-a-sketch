@@ -1,17 +1,31 @@
-const btn = document.querySelector(".btn");
+import rangeSlider from "range-slider-input";
+import "range-slider-input/dist/style.css";
 
-btn.addEventListener("click", promptMe);
-
-function promptMe() {
-  const value = prompt("Squares per side?", 16);
-  if (value > 100) {
-    alert("Must not be greater than 100");
-    return;
+const rangeSliderElemnent = rangeSlider(
+  document.querySelector("#range-slider"),
+  {
+    min: 16,
+    max: 32,
+    step: 2,
+    value: [0, 0],
+    thumbsDisabled: [true, false],
+    rangeSlideDisabled: true,
+    onInput: (value, onUserInteraction) => blocks(value[1]),
   }
-  blocks(value);
+);
+
+function changebg(block) {
+  block.addEventListener("click", (f) => {
+    const bgColor = f.target.style.backgroundColor;
+    if (bgColor === "black") {
+      f.target.style.backgroundColor = "";
+    } else {
+      f.target.style.backgroundColor = "black";
+    }
+  });
 }
 
-function blocks(blocks = 32) {
+function blocks(blocks) {
   const totalBlocks = blocks ** 2;
   let output = "";
   for (let i = 1; i <= totalBlocks; i++) {
@@ -22,12 +36,4 @@ function blocks(blocks = 32) {
   }
   document.querySelector(".block-container").innerHTML = output;
   document.querySelectorAll(".block").forEach((block) => changebg(block));
-}
-
-blocks();
-
-function changebg(e) {
-  e.addEventListener("click", (f) => {
-    f.target.style.backgroundColor = "black";
-  });
 }

@@ -4,22 +4,20 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Etch a Sketch</title>
   </head>
   <body>
-    <header>
-      <div class="container flex flex-column xy-center">
-        <h1>Etch-a-Sketch</h1>
-      </div>
+    <header class="container flex flex-column xy-center">
+      <h1>Etch-a-Sketch</h1>
     </header>
     <section class="showcase">
       <div class="container flex xy-center flex-column">
-        <button class="btn">Give Number of blocks</button>
-
+        <div id="range-slider"></div>
         <div class="block-container"></div>
       </div>
     </section>
 
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="main.js"></script>
   </body>
 </html>
